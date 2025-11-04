@@ -18,6 +18,18 @@ function addExpenseEntry(entries) {
 }
 totalExpensesValue = addExpenseEntry(expenseEntries);
 
+function calculateAverageExpense() {
+  let sumEntries = addExpenseEntry(expenseEntries);
+  let n = expenseEntries.length;
+  let average = 0;
+  if (n === 0) {
+    average = 0;
+  } else {
+    average = sumEntries / n;
+  }
+  return average;
+}
+
 /*
 for (let i = 0; i < expenseEntries.length; i++) {
   console.log("Soma:", sumEntries);
