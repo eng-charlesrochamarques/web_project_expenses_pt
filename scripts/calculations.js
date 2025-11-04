@@ -29,6 +29,12 @@ function calculateAverageExpense() {
   }
   return average;
 }
+function calculateBalance() {
+  let sumEntries = addExpenseEntry(expenseEntries);
+  let balance = 0;
+  balance = budgetValue - sumEntries;
+  return balance;
+}
 
 /*
 for (let i = 0; i < expenseEntries.length; i++) {
