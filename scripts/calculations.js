@@ -9,3 +9,34 @@ let expenseEntries = [
   ["groceries", 28],
   ["subscriptions", 12],
 ];
+function addExpenseEntry(entries) {
+  let sumEntries = 0;
+  for (let i = 0; i < entries.length; i++) {
+    sumEntries = entries[i][1] + sumEntries;
+  }
+  return sumEntries;
+}
+totalExpensesValue = addExpenseEntry(expenseEntries);
+
+/*
+for (let i = 0; i < expenseEntries.length; i++) {
+  console.log("Soma:", sumEntries);
+  console.log("Entrada:", expenseEntries[i][1]);
+  console.log("i:", i);
+  console.log("Numero:", expenseEntries.length);
+  sumEntries = expenseEntries[i][1] + sumEntries;
+}
+*/
+/*
+function addExpenseEntry(entries) {
+  debugger;
+  let sumEntries = 0;
+  for (let i = 0; i < entries.length; i++) {
+    console.log("Soma:", sumEntries);
+    sumEntries = entries[i][1] + sumEntries;
+  }
+  return sumEntries;
+}
+*/
+
+console.log(expenseEntries.length);
