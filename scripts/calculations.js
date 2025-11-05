@@ -93,26 +93,3 @@ function addExpenseEntry(newInput) {
   expenseEntries.push(newInput);
   totalExpensesValue = totalExpenseEntry(expenseEntries);
 }
-
-/*
-for (let i = 0; i < expenseEntries.length; i++) {
-  console.log("Soma:", sumEntries);
-  console.log("Entrada:", expenseEntries[i][1]);
-  console.log("i:", i);
-  console.log("Numero:", expenseEntries.length);
-  sumEntries = expenseEntries[i][1] + sumEntries;
-}
-*/
-/*
-function addExpenseEntry(entries) {
-  debugger;
-  let sumEntries = 0;
-  for (let i = 0; i < entries.length; i++) {
-    console.log("Soma:", sumEntries);
-    sumEntries = entries[i][1] + sumEntries;
-  }
-  return sumEntries;
-}
-*/
-
-console.log(expenseEntries.length);
