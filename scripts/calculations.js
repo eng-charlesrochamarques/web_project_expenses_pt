@@ -10,17 +10,17 @@ let expenseEntries = [
   ["subscriptions", 12],
 ];
 let balanceV;
-function addExpenseEntry(entries) {
+function totalExpenseEntry(entries) {
   let sumEntries = 0;
   for (let i = 0; i < entries.length; i++) {
     sumEntries = entries[i][1] + sumEntries;
   }
   return sumEntries;
 }
-totalExpensesValue = addExpenseEntry(expenseEntries);
+totalExpensesValue = totalExpenseEntry(expenseEntries);
 
 function calculateAverageExpense() {
-  let sumEntries = addExpenseEntry(expenseEntries);
+  let sumEntries = totalExpenseEntry(expenseEntries);
   let n = expenseEntries.length;
   let average = 0;
   if (n === 0) {
@@ -32,7 +32,7 @@ function calculateAverageExpense() {
 }
 
 function calculateBalance() {
-  let sumEntries = addExpenseEntry(expenseEntries);
+  let sumEntries = totalExpenseEntry(expenseEntries);
   let balance = 0;
   balance = budgetValue - sumEntries;
   return balance;
@@ -88,6 +88,10 @@ function calculateLargestCategory() {
     }
   }
   return categoriesTotals[key][0];
+}
+function addExpenseEntry(newInput) {
+  expenseEntries.push(newInput);
+  totalExpensesValue = totalExpenseEntry(expenseEntries);
 }
 
 /*
