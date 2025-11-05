@@ -47,8 +47,17 @@ function updateBalanceColor() {
   } else {
     balanceColor = "green";
   }
-  console.log("Cor:", balanceColor);
+
   return balanceColor;
+}
+function calculateCategoryExpenses(name) {
+  let sumCategory = 0;
+  for (let i = 0; i < expenseEntries.length; i++) {
+    if (expenseEntries[i][0] === name) {
+      sumCategory += expenseEntries[i][1];
+    }
+  }
+  return sumCategory;
 }
 /*
 for (let i = 0; i < expenseEntries.length; i++) {
