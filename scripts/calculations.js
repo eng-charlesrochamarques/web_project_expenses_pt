@@ -9,6 +9,7 @@ let expenseEntries = [
   ["groceries", 28],
   ["subscriptions", 12],
 ];
+let balanceV;
 function addExpenseEntry(entries) {
   let sumEntries = 0;
   for (let i = 0; i < entries.length; i++) {
@@ -29,13 +30,26 @@ function calculateAverageExpense() {
   }
   return average;
 }
+
 function calculateBalance() {
   let sumEntries = addExpenseEntry(expenseEntries);
   let balance = 0;
   balance = budgetValue - sumEntries;
   return balance;
 }
-
+let balanceColor = "green";
+function updateBalanceColor() {
+  let balance = calculateBalance();
+  if (balance < 0) {
+    balanceColor = "red";
+  } else if (balance <= budgetValue * 0.25) {
+    balanceColor = "orange";
+  } else {
+    balanceColor = "green";
+  }
+  console.log("Cor:", balanceColor);
+  return balanceColor;
+}
 /*
 for (let i = 0; i < expenseEntries.length; i++) {
   console.log("Soma:", sumEntries);
