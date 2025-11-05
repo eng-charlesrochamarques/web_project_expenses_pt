@@ -59,6 +59,37 @@ function calculateCategoryExpenses(name) {
   }
   return sumCategory;
 }
+let categoriesTotals = [];
+
+function calculateLargestCategory() {
+  const categoryNames = [
+    "groceries",
+    "restaurants",
+    "subscriptions",
+    "transport",
+    "home",
+  ];
+
+  for (let i = 0; i < categoryNames.length; i++) {
+    let sumCategory = calculateCategoryExpenses(categoryNames[i]);
+
+    categoriesTotals[i] = [categoryNames[i], sumCategory];
+
+    categoriesTotals[i][1] = calculateCategoryExpenses(categoryNames[i]);
+    console.log("Soma:", categoriesTotals[i][0]);
+    console.log("valor", categoriesTotals[i][1]);
+  }
+  let key = 0;
+  let maximum = categoriesTotals[0][1];
+  for (let i = 0; i < categoriesTotals.length; i++) {
+    if (categoriesTotals[i][1] > maximum) {
+      maximum = categoriesTotals[i][1];
+      key = i;
+    }
+  }
+  return categoriesTotals[key][0];
+}
+
 /*
 for (let i = 0; i < expenseEntries.length; i++) {
   console.log("Soma:", sumEntries);
