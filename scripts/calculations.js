@@ -1,5 +1,5 @@
-let budgetValue;
-let totalExpensesValue;
+let budgetValue = 0;
+let totalExpensesValue = 0;
 let expenseEntries = [
   ["groceries", 33],
   ["restaurants", 50],
@@ -9,7 +9,7 @@ let expenseEntries = [
   ["groceries", 28],
   ["subscriptions", 12],
 ];
-let balanceV;
+
 function totalExpenseEntry(entries) {
   let sumEntries = 0;
   for (let i = 0; i < entries.length; i++) {
